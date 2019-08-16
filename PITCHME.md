@@ -89,7 +89,7 @@ serde = "~1.0"
 @snapend
 ---
 Ownership
-
+<hr width=20%>
 ---
 This is the borrow checker
 ![yoda](./assets/yoda.jpeg)
@@ -99,8 +99,9 @@ This is you handling the borrow checker
 ![balance](./assets/balance.png)
 
 ---
-@snap[midpoint text-06]
+@snap[text-center text-06]
 [Ownership](https://repl.it/@PI_Victor/ownership)
+<hr width=20%>
 @ul
 - a variable becomes a value's owner
 - two variables can not own the same value
@@ -110,8 +111,9 @@ This is you handling the borrow checker
 @snapend
 ---
 
-@snap[midpoint text-06]
+@snap[text-center text-06]
 [Lifetimes](https://repl.it/@PI_Victor/lifetimes)
+<hr width=20%>
 @ul
 - a variable's lifetime begins when it is created and ends when it is destroyed
 - ellision was introduced to strip away a lot of lifetime boilerplate annotations (available for functions, since they don't have to correlate with anything else)
@@ -122,8 +124,9 @@ This is you handling the borrow checker
 @ulend
 @snapend
 ---
-@snap[midpoint text-06]
-@size[11px]([Structs](https://repl.it/@PI_Victor/structs))
+@snap[text-center text-06]
+[Structs](https://repl.it/@PI_Victor/structs)
+<hr width=20%>
 @ul
 - fields/functions are by default private
 - they accept generic type parameters
@@ -132,25 +135,31 @@ This is you handling the borrow checker
 @ulend
 @snapend
 ---
+@snap[text-center text-06]
 [Traits and Generics](https://repl.it/@PI_Victor/traits-and-generics)
-@snap[midpoint text-06]
+<hr width=20%>
+@ul
 - for traits static methods can be defined or instance methods (self)
 - traits can provide default method definitions
 - types can be bound to traits when passed as generic types
 - generics are accepted by: functions, structs, enums and traits
-
+@ulend
 @snapend
 ---
-[Error handling](https://repl.it/@PI_Victor/error-handling)
-@snap[midpoint text-06]
+@snap[text-center text-06]
+[Error handling && Pattern matching](https://repl.it/@PI_Victor/error-handling)
+<hr width=20%>
 @ul
-- return values are handled by the Option<T> enum
-- unwrap panics if the result is Err or None othwerwise it unwraps Ok(T) from Result, should be used when you don't expect an error
-- ? will return the Result type up to the caller to be handled without panicking
+- return values can handled by the Option<T> (Some, Err, None) Result<T, err> enums
+- unwrap() panics if the result is Err or None othwerwise it unwraps Ok(T) from Result
+- ? will return the Result type up to the caller to be handled without panicking, does implicit From trait conversion on error type
 - expect is similar to unwrap but you can set a custom error message
 @ulend
-@snap
+@snapend
 ---
-[Pattern matching](https://repl.it/@PI_Victor/pattern-matching)
 
----
+```rust
+impl Done for Presentation {
+    fn finish(r: Input) -> Part2
+}
+```
